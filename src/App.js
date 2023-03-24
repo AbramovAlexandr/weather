@@ -15,7 +15,7 @@ function App() {
   const [moscow, setMoscow] = React.useState([])
   const [antalya, setAntalya] = React.useState([])
 
-  //** Temp */
+  //** Temp (is)*/
   const [celsius, setСelsius] = React.useState(true)
   const [fahrenheit, setFahrenheit] = React.useState(false)
   const [kelvin, setKelvin] = React.useState(false)
@@ -94,6 +94,21 @@ function App() {
     )
   }
 
+  const weatherData = [
+    {
+      data: moscow
+    },
+    {
+      data: antalya
+  
+    },
+    {
+      data: beverly
+    },
+    {
+      data: london
+    }
+  ];
   return (
     <>
     <div className='temp'>
@@ -102,23 +117,39 @@ function App() {
       <button onClick={toggleKelvin}>K</button>
     </div>
     <div className="App">
-      <Card main={moscow.weather[0].main}
-      description={moscow.weather[0].description}
-      temp={moscow.main}
-      country={moscow.sys.country}
-      name={moscow.name}
-      celsius={celsius}
-      fahrenheit={fahrenheit}
-      kelvin={kelvin}
-        />
+      {
+        weatherData.map((item) => {
+          const weather = item.data.weather[0];
+          const main = weather.main;
+          const description = weather.description;
+          const country = item.data.sys.country;
+          const { main: temp, name }  = item.data;
+          return <Card 
+            main={main}
+            description={description}
+            country={country}
+            temp={temp}
+            name={name}
+          />
+        })
+      }
+      {/* <Card main={moscow.weather[0].main}
+          description={moscow.weather[0].description}
+          temp={moscow.main}
+          country={moscow.sys.country}
+          name={moscow.name}
+          celsius={celsius}
+          fahrenheit={fahrenheit}
+          kelvin={kelvin}
+      />
       <Card main={antalya.weather[0].main}
-      description={antalya.weather[0].description}
-      temp={antalya.main} country={antalya.sys.country}
-      name={antalya.name}
-      celsius={celsius}
-      fahrenheit={fahrenheit}
-      kelvin={kelvin}
-        />
+        description={antalya.weather[0].description}
+        temp={antalya.main} country={antalya.sys.country}
+        name={antalya.name}
+        celsius={celsius}
+        fahrenheit={fahrenheit}
+        kelvin={kelvin}
+      />
       <Card main={beverly.weather[0].main}
       description={beverly.weather[0].description} 
       temp={beverly.main} country={beverly.sys.country} 
@@ -128,14 +159,13 @@ function App() {
       kelvin={kelvin}
       />
       <Card main={london.weather[0].main}
-      description={london.weather[0].description}
-      temp={london.main} country={london.sys.country}
-      name={london.name}
-      celsius={celsius}
-      fahrenheit={fahrenheit}
-      kelvin={kelvin}
-
-      />
+        description={london.weather[0].description}
+        temp={london.main} country={london.sys.country}
+        name={london.name}
+        celsius={celsius}
+        fahrenheit={fahrenheit}
+        kelvin={kelvin}
+      /> */}
     </div>
     </>
     
