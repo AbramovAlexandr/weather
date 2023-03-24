@@ -21,3 +21,11 @@ img{
     justify-content: space-around;
     width: 400px;
 }
+
+.min-max{
+    display: flex;
+}
+
+.min-max h2{
+    margin: 5px;
+}
