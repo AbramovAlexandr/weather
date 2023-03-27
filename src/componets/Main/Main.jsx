@@ -68,7 +68,7 @@ function Main() {
     )
   }
 
-  const weatherData = [
+const weatherData = [
     {
       data: moscow
     },
