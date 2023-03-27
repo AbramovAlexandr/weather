@@ -15,7 +15,7 @@ export const getUriImg =(kindWeather) => {
   };
 
 
-export const getIsTemp = (isKindTemp, temp) =>{
+export const getKindTemp = (isKindTemp, temp) =>{
     if(isKindTemp === 'cel'){
      return Math.round(temp - 273)
     }
@@ -23,4 +23,12 @@ export const getIsTemp = (isKindTemp, temp) =>{
       return Math.round((temp - 273) * 1.8)
     }
     return temp
+}
+
+
+export const getKindDegrees = (temp) =>{
+    if(temp < 0){
+      return '-'
+    }
+    return "+"
 }
