@@ -1,31 +1,31 @@
-.header{
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    justify-content: space-between;
-    border: 1px solid rgba(255, 255, 255, .2);
-    background: rgba(255, 255 ,255, .4);
-    backdrop-filter: blur(10px);
-    padding: 0;
-    margin: 0;
-    text-align: center;
-    align-items: center;
+.header {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  justify-content: space-between;
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  background: rgba(255, 255, 255, 0.4);
+  backdrop-filter: blur(10px);
+  padding: 0;
+  margin: 0;
+  text-align: center;
+  align-items: center;
 }
 
-.header h1{
-    padding: 5px;
+.header h1 {
+  padding: 5px;
 }
 
-.isTemp button{
-    padding: 5px 30px;
-    margin: 0 10px;
-    border-radius: 10px;
-    border: 1px solid rgba(255, 255, 255, .2);
-    background: rgba(255, 255 ,255, .4);
-    backdrop-filter: blur(10px);
-    cursor: pointer;
-    transition: .1s;
+.isTemp button {
+  padding: 5px 30px;
+  margin: 0 10px;
+  border-radius: 10px;
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  background: rgba(255, 255, 255, 0.4);
+  backdrop-filter: blur(10px);
+  cursor: pointer;
+  transition: 0.1s;
 }
 
-.isTemp button:hover{
-    background: rgba(243, 242, 242, 0.4);
+.isTemp button:hover {
+  background: rgba(243, 242, 242, 0.4);
 }

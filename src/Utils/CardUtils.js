@@ -1,34 +1,32 @@
-import rain from '../images/heavy-rain.png';
-import cloud from '../images/cloud.png';
-import sunny from '../images/sun.png';
+import rain from "../images/heavy-rain.png";
+import cloud from "../images/cloud.png";
+import sunny from "../images/sun.png";
 
-export const getUriImg =(kindWeather) => {
-    if (kindWeather === 'Clouds') {
-      return cloud;
-    }
+export const getUriImg = (kindWeather) => {
+  if (kindWeather === "Clouds") {
+    return cloud;
+  }
 
-    if (kindWeather === 'Clear') {
-      return sunny;
-    }
+  if (kindWeather === "Clear") {
+    return sunny;
+  }
 
-    return rain;
-  };
+  return rain;
+};
 
+export const getKindTemp = (isKindTemp, temp) => {
+  if (isKindTemp === "cel") {
+    return Math.round(temp - 273);
+  }
+  if (isKindTemp === "fah") {
+    return Math.round((temp - 273) * 1.8);
+  }
+  return temp;
+};
 
-export const getKindTemp = (isKindTemp, temp) =>{
-    if(isKindTemp === 'cel'){
-     return Math.round(temp - 273)
-    }
-    if(isKindTemp === 'fah'){
-      return Math.round((temp - 273) * 1.8)
-    }
-    return temp
-}
-
-
-export const getKindDegrees = (temp) =>{
-    if(temp < 0){
-      return '-'
-    }
-    return "+"
-}
+export const getKindDegrees = (temp) => {
+  if (temp < 0) {
+    return "-";
+  }
+  return "+";
+};

@@ -1,11 +1,11 @@
-import React from 'react'
-import Main from './componets/Main/Main';
+import React from "react";
+import Main from "./componets/Main/Main";
 
-  const App = () => {
+const App = () => {
   return (
     <>
-      <Main/>
+      <Main />
     </>
-  )
-}
+  );
+};
 export default App;
