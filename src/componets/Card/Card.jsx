@@ -1,38 +1,48 @@
-import React, { useState } from "react";
-import "./card.css";
-import { getKindDegrees, getKindTemp, getUriImg } from "../../Utils/CardUtils";
+import React, { useContext } from "react";
+import s from "./card.module.scss";
+import { getKindDegrees, getKindTemp, getUriImg } from "../../utils/CardUtils";
 import PropTypes from "prop-types";
-//use modules.css && js/ts in css
-// const TEMP_TYPE_KEL = 'kel';
+import {Context} from '../../context/context';
+import { Button, Typography } from "@mui/material";
 
-export const Card = (props) => {
+export const CardWeather = (props) => {
   const { name, temp, country, description, kindWeather } = props;
 
-  const [isKindTemp, setIsKindTemp] = useState("cel");
+  const {typeTemp} = useContext(Context);
 
   const uriKindWeather = getUriImg(kindWeather);
-  const kindTemp = getKindTemp(isKindTemp, temp.temp);
+  const kindTemp = getKindTemp(typeTemp, temp.temp);
   const kindDegrees = getKindDegrees(temp.temp);
   //TODO константы стровковые и числовые стоит выносить в отдельные переменные
   return (
-    <div className="card">
-      <h1>{`${name} (${country})`}</h1>
-      <h1>{`${kindDegrees}${kindTemp}°`}</h1>
+      <div className={s.card}>
+      <Typography variant="h4">{`${name} (${country})`}</Typography>
+      <Typography variant="h2">{`${kindDegrees}${kindTemp}°`}</Typography>
       <img alt="#" src={uriKindWeather} />
-      <h2>{`${description}`}</h2>
-      <span className="temp">
-        <button onClick={() => setIsKindTemp("kel")}>k</button>
-        <button onClick={() => setIsKindTemp("fah")}>f</button>
-        <button onClick={() => setIsKindTemp("cel")}>c</button>
-      </span>
+      <Typography variant="h5">{`${description}`}</Typography>
+      <Button>More</Button>
     </div>
-  );
+  )
 };
 
-Card.propTypes = {
+CardWeather.propTypes = {
   name: PropTypes.string,
   temp: PropTypes.any,
   description: PropTypes.any,
   country: PropTypes.any,
   clouds: PropTypes.any,
 };
+
+
+
+
+
+
+
+// const {handleChangeTypeTemp, typeTemp} = useContext(Context);
+//   const isK = typeTemp === 'kel';
+//   const styleK = isK ? { color: 'red'} : {};
+
+//   const isC = typeTemp === 'cel'
+//   const styleC = isC ? { color: 'blue'} : {};
+

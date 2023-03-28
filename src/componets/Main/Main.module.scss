@@ -1,0 +1,20 @@
+
+.wrapperDark{
+    background: url('../../images/jari-hytonen-VJBIn6n_gzI-unsplash.jpg');
+    height: 70vw;
+    color: white;
+}
+.wrapper{
+    background: url('../../images/pero-kalimero-9BJRGlqoIUk-unsplash.jpg');
+    height: 70vw;
+}
+.main{
+    display: flex;
+    flex-direction: row;
+    padding: 20px;
+}
+
+.input{
+    display: flex;
+    margin: 10px;
+}
