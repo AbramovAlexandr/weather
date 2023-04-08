@@ -1,0 +1,24 @@
+.FullCardDark{
+    background: url('../../../../images/jari-hytonen-VJBIn6n_gzI-unsplash.jpg');
+    height: 70vw;
+    color: white;
+    padding: 20px 50px;
+}
+.FullCard{
+    background: url('../../../../images/pero-kalimero-9BJRGlqoIUk-unsplash.jpg');
+    height: 70vw;
+    padding: 20px 50px;
+}
+
+.paper{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    background: rgba(255, 255, 255, 0.4);
+    backdrop-filter: blur(10px);
+    font-size: 50px;
+    img{
+        width: 100px;
+    }
+}

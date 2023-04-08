@@ -1,8 +1,9 @@
 import React, {useContext} from "react";
 import s from "./Header.module.scss";
-import {Context} from '../../context/context';
+import {Context} from '../../utils/context/context';
 import { Button, ButtonGroup, FormControlLabel, Switch, Typography } from "@mui/material";
-import { TEMP_TYPE_CEL, TEMP_TYPE_FAH, TEMP_TYPE_KEL } from "../../constants/type_temp";
+import { TEMP_TYPE_CEL, TEMP_TYPE_FAH, TEMP_TYPE_KEL } from "../../utils/constants/type_temp";
+import { Link } from "react-router-dom";
 
 export const Header = () => {
   const {handleChangeTypeTemp, toggleTheme} = useContext(Context);
@@ -23,7 +24,7 @@ export const Header = () => {
   
   return (
     <div className={s.header}>
-      <Typography variant="h3">Weather</Typography>
+     <Link to={'/'}><Typography variant="h3">Weather</Typography></Link> 
       <ButtonGroup variant="text" aria-label="text button group">
         <Button onClick={handleOnCel}>C°</Button>
         <Button onClick={handleOnFah}>F°</Button>
